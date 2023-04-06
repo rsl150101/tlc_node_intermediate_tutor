@@ -20,3 +20,7 @@ npm i nodemon -D
 ### 개발자 환경
 
 - nodemon : 디렉토리 파일 변경 감지 모니터링하는 도구
+
+## ERD
+
+![erd](./src/static/images/node_intermediate_erd.png)

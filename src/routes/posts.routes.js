@@ -1,9 +1,11 @@
 const express = require("express");
+
 const { Post, User } = require("../models");
 const {
   postCreateValidation,
   postUpdateValidation,
 } = require("../validations");
+const authMiddleware = require("../middleware/authMiddleware");
 
 const router = express.Router();
 
@@ -40,9 +42,12 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-router.post("/", async (req, res) => {
+router.post("/", authMiddleware, async (req, res) => {
+  const { currentUser } = res.locals;
+  const userId = currentUser.id;
+
   try {
-    const { title, content, userId } = await postCreateValidation.validateAsync(
+    const { title, content } = await postCreateValidation.validateAsync(
       req.body
     );
 

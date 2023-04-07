@@ -3,7 +3,7 @@
 ## 패키지
 
 ```bash
-npm i sequelize-cli express mysql2 sequelize joi jsonwebtoken bcrypt
+npm i sequelize-cli express mysql2 sequelize joi jsonwebtoken bcrypt dotenv
 npm i nodemon -D
 ```
 
@@ -16,6 +16,7 @@ npm i nodemon -D
 - joi : 유효성 검사 패키지
 - jsonwebtoken : jwt 생성해서 토큰을 인증, 복호화, 검증하기 위해 사용
 - bcrypt : 비밀번호 암호화, 디코딩 패키지
+- dotenv : 예민한 정보를 가진 환경변수를 감추기 위한 패키지
 
 ### 개발자 환경
 

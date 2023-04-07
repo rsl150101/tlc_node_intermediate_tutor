@@ -8,10 +8,15 @@ const signupValidation = Joi.object({
   }),
 });
 
+const loginValidation = Joi.object({
+  nickname: Joi.string().alphanum().not("").required(),
+  password: Joi.string().min(3).not("").required(),
+});
+
 const postCreateValidation = Joi.object({
   title: Joi.string().not("").required(),
   content: Joi.string().not("").required(),
-  userId: Joi.number().required(),
+  userId: Joi.forbidden(),
 });
 
 const postUpdateValidation = Joi.object({
@@ -32,6 +37,7 @@ const commentUpdateValidation = Joi.object({
 
 module.exports = {
   signupValidation,
+  loginValidation,
   postCreateValidation,
   postUpdateValidation,
   commentCreateValidation,
